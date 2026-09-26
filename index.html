@@ -2,6 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+    <!-- PWA Meta Tags & Manifest -->
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkpTIEJlbmVmXHUwMGVkY2lvcyAtIENSTSAmIFByb3Bvc3RhcyIsICJzaG9ydF9uYW1lIjogIkpTIEJlbmVmXHUwMGVkY2lvcyIsICJkZXNjcmlwdGlvbiI6ICJDUk0gQ29tZXJjaWFsIGUgRW1pc3NvciBPZmljaWFsIGRlIFByb3Bvc3RhcyBkZSBBZGVzXHUwMGUzbyBkYSBKUyBCZW5lZlx1MDBlZGNpb3MiLCAic3RhcnRfdXJsIjogIi4vaW5kZXguaHRtbCIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxQjI0M0IiLCAidGhlbWVfY29sb3IiOiAiIzFCMjQzQiIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXdNQ0lnWm1sc2JEMGlJekZDTWpRelFpSXZQZ29nSUR4eVpXTjBJSGc5SWpJMElpQjVQU0l5TkNJZ2QybGtkR2c5SWpRMk5DSWdhR1ZwWjJoMFBTSTBOalFpSUhKNFBTSTRNQ0lnWm1sc2JEMGlJMFpHUmtaR1JpSXZQZ29nSUR4bklIUnlZVzV6Wm05eWJUMGlkSEpoYm5Oc1lYUmxLRGMyTENBMU1Da2lQZ29nSUNBZ1BDRXRMU0JNWlhSeVlTQktJQ2hJWVhOMFpTQkJlblZzSUUxaGNtbHVhRzhwSUMwdFBnb2dJQ0FnUEhCaGRHZ2daRDBpVFNBeE1qVXNNakFnVENBeE5qVXNNakFnVENBeE5qVXNOalVnVENBeE1qVXNPVFVnV2lJZ1ptbHNiRDBpSXpGQ01qUXpRaUl2UGdvZ0lDQWdQQ0V0TFNCTVpYUnlZU0JLSUNoSFlXNWphRzhnUkc5MWNtRmtieWtnTFMwK0NpQWdJQ0E4Y0dGMGFDQmtQU0pOSURFeU5Td3hNVEFnVENBeE5qVXNPREFnVENBeE5qVXNNVEV3SUVNZ01UWTFMREUwTWlBeE5EQXNNVFl5SURFd01pd3hOaklnUXlBM09Dd3hOaklnTmpBc01UVXdJRFUwTERFek9DQk1JRGc0TERFeE1pQkRJRGswTERFeU1DQXhNRElzTVRJNElERXhOQ3d4TWpnZ1F5QXhNalFzTVRJNElERXpNU3d4TWpBZ01UTXhMREV3T0NCYUlpQm1hV3hzUFNJalF6WTVSVE0xSWk4K0NpQWdJQ0E4SVMwdElFeGxkSEpoSUZNZ0tGQnZiblJoSUVGNmRXd2dUV0Z5YVc1b2J5a2dMUzArQ2lBZ0lDQThjR0YwYUNCa1BTSk5JREU0TUN3Mk9DQkRJREU0TUN3ME1pQXlNRFFzTVRnZ01qVXlMREU0SUVNZ01qZzRMREU0SURNeE1Dd3pOQ0F6TWpBc05EZ2dUQ0F5T0Rnc056SWdReUF5T0RBc05qSWdNalkyTERRNElESTBPQ3cwT0NCRElESXpNQ3cwT0NBeU1qQXNOVFlnTWpJd0xEWTRJRXdnTVRnd0xEWTRJRm9pSUdacGJHdzlJaU14UWpJME0wSWlMejRLSUNBZ0lEd2hMUzBnVEdWMGNtRWdVeUFvUTI5eWNHOGdSRzkxY21Ga2J5a2dMUzArQ2lBZ0lDQThjR0YwYUNCa1BTSk5JREU0TUN3NE1pQk1JREl5TUN3M05pQkRJREl5TkN3NU1DQXlNellzT1RnZ01qWXdMREV3TmlCRElETXdOQ3d4TVRnZ016STRMREV6TWlBek1qZ3NNVFkwSUVNZ016STRMREU1TmlBek1ESXNNakU0SURJMU1pd3lNVGdnUXlBeU1EUXNNakU0SURFNE1Dd3hPVFFnTVRjd0xERTNOQ0JNSURJd05pd3hORFlnUXlBeU1UWXNNVFl3SURJek1Dd3hOeklnTWpVeUxERTNNaUJESURJM01Dd3hOeklnTWpneUxERTJOQ0F5T0RJc01UVXdJRU1nTWpneUxERXpPQ0F5TnpBc01UTXdJREkwTWl3eE1qSWdReUF5TURJc01UQTRJREU0TUN3NU5DQXhPREFzT0RJZ1dpSWdabWxzYkQwaUkwTTJPVVV6TlNJZ2RISmhibk5tYjNKdFBTSjBjbUZ1YzJ4aGRHVW9NQ3dnTFRVd0tTSXZQZ29nSUNBZ1BDRXRMU0JCY21OdklFSnlZVzVqYnlBdExUNEtJQ0FnSUR4d1lYUm9JR1E5SWswZ05EZ3NNVEkwSUZFZ01Ua3dMRFEwSURNeU9Dd3pNaUJNSURNeU5TdzBNaUJSSURFNU1DdzFOQ0ExTUN3eE16SWdXaUlnWm1sc2JEMGlJMFpHUmtaR1JpSXZQZ29nSUR3dlp6NEtJQ0E4ZEdWNGRDQjRQU0l5TlRZaUlIazlJak0yTUNJZ1ptOXVkQzFtWVcxcGJIazlJaWROYjI1MGMyVnljbUYwSnl3Z2MyRnVjeTF6WlhKcFppSWdabTl1ZEMxemFYcGxQU0kwTkNJZ1ptOXVkQzEzWldsbmFIUTlJamt3TUNJZ1ptbHNiRDBpSXpGQ01qUXpRaUlnZEdWNGRDMWhibU5vYjNJOUltMXBaR1JzWlNJZ2JHVjBkR1Z5TFhOd1lXTnBibWM5SWpZaVBrSkZUa1ZHdzQxRFNVOVRQQzkwWlhoMFBnb2dJRHgwWlhoMElIZzlJakkxTmlJZ2VUMGlNemsxSWlCbWIyNTBMV1poYldsc2VUMGlKMDF2Ym5SelpYSnlZWFFuTENCellXNXpMWE5sY21sbUlpQm1iMjUwTFhOcGVtVTlJakUxSWlCbWIyNTBMWGRsYVdkb2REMGlOekF3SWlCbWFXeHNQU0lqTVVJeU5ETkNJaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCc1pYUjBaWEl0YzNCaFkybHVaejBpTlNJK1VGSlBWRVhEaDhPRFR5QkdRVTFKVEVsQlVqd3ZkR1Y0ZEQ0S0lDQThkR1Y0ZENCNFBTSXlOVFlpSUhrOUlqUXlNQ0lnWm05dWRDMW1ZVzFwYkhrOUlpZE5iMjUwYzJWeWNtRjBKeXdnYzJGdWN5MXpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSXhOU0lnWm05dWRDMTNaV2xuYUhROUlqY3dNQ0lnWm1sc2JEMGlJME0yT1VVek5TSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0lnYkdWMGRHVnlMWE53WVdOcGJtYzlJalVpUGtVZ1JrbE9RVTVEUlVsU1FUd3ZkR1Y0ZEQ0S1BDOXpkbWMrIiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn1dfQ==">
+  <meta name="theme-color" content="#1B243B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="JS Benefícios">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjEwMCIgZmlsbD0iIzFCMjQzQiIvPgogIDxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjQ2NCIgaGVpZ2h0PSI0NjQiIHJ4PSI4MCIgZmlsbD0iI0ZGRkZGRiIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDc2LCA1MCkiPgogICAgPCEtLSBMZXRyYSBKIChIYXN0ZSBBenVsIE1hcmluaG8pIC0tPgogICAgPHBhdGggZD0iTSAxMjUsMjAgTCAxNjUsMjAgTCAxNjUsNjUgTCAxMjUsOTUgWiIgZmlsbD0iIzFCMjQzQiIvPgogICAgPCEtLSBMZXRyYSBKIChHYW5jaG8gRG91cmFkbykgLS0+CiAgICA8cGF0aCBkPSJNIDEyNSwxMTAgTCAxNjUsODAgTCAxNjUsMTEwIEMgMTY1LDE0MiAxNDAsMTYyIDEwMiwxNjIgQyA3OCwxNjIgNjAsMTUwIDU0LDEzOCBMIDg4LDExMiBDIDk0LDEyMCAxMDIsMTI4IDExNCwxMjggQyAxMjQsMTI4IDEzMSwxMjAgMTMxLDEwOCBaIiBmaWxsPSIjQzY5RTM1Ii8+CiAgICA8IS0tIExldHJhIFMgKFBvbnRhIEF6dWwgTWFyaW5obykgLS0+CiAgICA8cGF0aCBkPSJNIDE4MCw2OCBDIDE4MCw0MiAyMDQsMTggMjUyLDE4IEMgMjg4LDE4IDMxMCwzNCAzMjAsNDggTCAyODgsNzIgQyAyODAsNjIgMjY2LDQ4IDI0OCw0OCBDIDIzMCw0OCAyMjAsNTYgMjIwLDY4IEwgMTgwLDY4IFoiIGZpbGw9IiMxQjI0M0IiLz4KICAgIDwhLS0gTGV0cmEgUyAoQ29ycG8gRG91cmFkbykgLS0+CiAgICA8cGF0aCBkPSJNIDE4MCw4MiBMIDIyMCw3NiBDIDIyNCw5MCAyMzYsOTggMjYwLDEwNiBDIDMwNCwxMTggMzI4LDEzMiAzMjgsMTY0IEMgMzI4LDE5NiAzMDIsMjE4IDI1MiwyMTggQyAyMDQsMjE4IDE4MCwxOTQgMTcwLDE3NCBMIDIwNiwxNDYgQyAyMTYsMTYwIDIzMCwxNzIgMjUyLDE3MiBDIDI3MCwxNzIgMjgyLDE2NCAyODIsMTUwIEMgMjgyLDEzOCAyNzAsMTMwIDI0MiwxMjIgQyAyMDIsMTA4IDE4MCw5NCAxODAsODIgWiIgZmlsbD0iI0M2OUUzNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwgLTUwKSIvPgogICAgPCEtLSBBcmNvIEJyYW5jbyAtLT4KICAgIDxwYXRoIGQ9Ik0gNDgsMTI0IFEgMTkwLDQ0IDMyOCwzMiBMIDMyNSw0MiBRIDE5MCw1NCA1MCwxMzIgWiIgZmlsbD0iI0ZGRkZGRiIvPgogIDwvZz4KICA8dGV4dCB4PSIyNTYiIHk9IjM2MCIgZm9udC1mYW1pbHk9IidNb250c2VycmF0Jywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzFCMjQzQiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjYiPkJFTkVGw41DSU9TPC90ZXh0PgogIDx0ZXh0IHg9IjI1NiIgeT0iMzk1IiBmb250LWZhbWlseT0iJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMUIyNDNCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNSI+UFJPVEXDh8ODTyBGQU1JTElBUjwvdGV4dD4KICA8dGV4dCB4PSIyNTYiIHk9IjQyMCIgZm9udC1mYW1pbHk9IidNb250c2VycmF0Jywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0M2OUUzNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjUiPkUgRklOQU5DRUlSQTwvdGV4dD4KPC9zdmc+">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Benefícios - CRM de Vendas & Emissor de Propostas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,11 +93,14 @@
     }
 
     .brand-logo-container {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      width: 100%;
       display: flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
     .logo-badge {
@@ -790,7 +802,11 @@
     }
 
     .proposal-brand-box {
-      display: flex;
+      background: #FFFFFF;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: inline-flex;
       align-items: center;
       gap: 20px;
     }
@@ -1219,11 +1235,17 @@
     }
 
     .login-header {
-      background: var(--color-navy);
-      padding: 36px 30px;
+      background: #FFFFFF;
+      padding: 32px 28px 22px;
       text-align: center;
-      border-bottom: 4px solid var(--color-gold);
+      border-bottom: 3px solid var(--color-gold);
       position: relative;
+    }
+    .login-sub {
+      color: var(--color-text-secondary);
+      font-size: 13px;
+      margin-top: 10px;
+      font-weight: 500;
     }
 
     .login-header svg {
@@ -1323,19 +1345,23 @@
     <div class="login-box">
       <div class="login-header">
         <!-- SVG Logo JS Benefícios Oficial -->
-        <svg viewBox="0 0 450 160" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(145, 5)">
-            <!-- Letra J em Azul Marinho -->
-            <path d="M42,5 H72 V72 C72,98 52,112 24,112 C7,112 -5,103 -10,95 L14,75 C18,80 23,86 31,86 C40,86 42,79 42,71 Z" fill="#1B243B"/>
-            <!-- Letra S em Dourado -->
-            <path d="M78,48 C78,28 94,5 130,5 C158,5 174,18 181,28 L158,48 C153,42 143,33 130,33 C118,33 111,38 111,46 C111,54 118,58 136,64 C167,73 186,85 186,110 C186,134 167,152 131,152 C99,152 82,136 74,124 L98,103 C105,112 116,122 131,122 C143,122 153,116 153,107 C153,98 144,94 126,88 C97,78 78,67 78,48 Z" fill="#C69E35"/>
-            <!-- Arco Swoosh Branco Cortando -->
-            <path d="M-12,82 C40,50 110,25 185,18 L188,27 C112,34 45,58 -8,91 Z" fill="#FFFFFF"/>
+        <svg viewBox="0 0 380 160" style="max-height: 68px; width: auto;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Monograma JS Oficial com J e S distintos -->
+          <g transform="translate(10, 5)">
+            <!-- Letra J (Haste superior Azul Marinho) -->
+            <path d="M 125,12 L 158,12 L 158,48 L 125,72 Z" fill="#1B243B"/>
+            <!-- Letra J (Gancho inferior Dourado) -->
+            <path d="M 125,82 L 158,58 L 158,82 C 158,106 138,120 108,120 C 88,120 74,110 70,102 L 98,82 C 102,87 108,94 118,94 C 127,94 130,88 130,78 Z" fill="#C69E35"/>
+            <!-- Letra S (Ponta superior Azul Marinho) -->
+            <path d="M 172,50 C 172,30 190,12 228,12 C 258,12 274,25 282,35 L 256,54 C 250,46 238,36 224,36 C 210,36 202,42 202,52 L 172,50 Z" fill="#1B243B"/>
+            <!-- Letra S (Corpo e curva inferior Dourado) -->
+            <path d="M 172,60 L 202,56 C 204,66 214,72 234,78 C 270,87 288,98 288,122 C 288,146 268,162 228,162 C 190,162 170,144 162,130 L 190,108 C 198,118 210,128 228,128 C 242,128 252,122 252,112 C 252,102 242,96 220,90 C 188,80 172,69 172,60 Z" fill="#C69E35" transform="translate(0, -38)"/>
+            <!-- Arco Branco Divisor -->
+            <path d="M 65,92 Q 175,32 288,24 L 286,32 Q 175,40 67,98 Z" fill="#FFFFFF"/>
           </g>
-          <!-- Texto BENEFÍCIOS -->
-          <text x="225" y="118" font-family="'Montserrat', sans-serif" font-size="34" font-weight="900" fill="#1B243B" text-anchor="middle" letter-spacing="4">BENEFÍCIOS</text>
-          <!-- Slogan -->
-          <text x="225" y="142" font-family="'Montserrat', sans-serif" font-size="11" font-weight="600" fill="#1B243B" text-anchor="middle" letter-spacing="3.5">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
+          <!-- Tipografia Oficial JS BENEFÍCIOS -->
+          <text x="190" y="126" font-family="'Montserrat', sans-serif" font-size="32" font-weight="900" fill="#1B243B" text-anchor="middle" letter-spacing="5">BENEFÍCIOS</text>
+          <text x="190" y="148" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" fill="#1B243B" text-anchor="middle" letter-spacing="3.8">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
         </svg>
         <p class="login-sub">Sistema de Gestão Comercial e Emissor de Propostas</p>
       </div>
@@ -1380,15 +1406,24 @@
       <div class="sidebar-header">
         <div class="brand-logo-container">
           <div class="logo-badge">
-            <svg viewBox="0 0 450 160" style="height: 44px; width: auto;" xmlns="http://www.w3.org/2000/svg">
-              <g transform="translate(145, 5)">
-                <path d="M42,5 H72 V72 C72,98 52,112 24,112 C7,112 -5,103 -10,95 L14,75 C18,80 23,86 31,86 C40,86 42,79 42,71 Z" fill="#FFFFFF"/>
-                <path d="M78,48 C78,28 94,5 130,5 C158,5 174,18 181,28 L158,48 C153,42 143,33 130,33 C118,33 111,38 111,46 C111,54 118,58 136,64 C167,73 186,85 186,110 C186,134 167,152 131,152 C99,152 82,136 74,124 L98,103 C105,112 116,122 131,122 C143,122 153,116 153,107 C153,98 144,94 126,88 C97,78 78,67 78,48 Z" fill="#C69E35"/>
-                <path d="M-12,82 C40,50 110,25 185,18 L188,27 C112,34 45,58 -8,91 Z" fill="#1B243B"/>
-              </g>
-              <text x="225" y="118" font-family="'Montserrat', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">BENEFÍCIOS</text>
-              <text x="225" y="142" font-family="'Montserrat', sans-serif" font-size="11" font-weight="600" fill="#C69E35" text-anchor="middle" letter-spacing="3.5">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
-            </svg>
+            <svg viewBox="0 0 380 160" style="max-height: 68px; width: auto;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Monograma JS Oficial com J e S distintos -->
+          <g transform="translate(10, 5)">
+            <!-- Letra J (Haste superior Azul Marinho) -->
+            <path d="M 125,12 L 158,12 L 158,48 L 125,72 Z" fill="#1B243B"/>
+            <!-- Letra J (Gancho inferior Dourado) -->
+            <path d="M 125,82 L 158,58 L 158,82 C 158,106 138,120 108,120 C 88,120 74,110 70,102 L 98,82 C 102,87 108,94 118,94 C 127,94 130,88 130,78 Z" fill="#C69E35"/>
+            <!-- Letra S (Ponta superior Azul Marinho) -->
+            <path d="M 172,50 C 172,30 190,12 228,12 C 258,12 274,25 282,35 L 256,54 C 250,46 238,36 224,36 C 210,36 202,42 202,52 L 172,50 Z" fill="#1B243B"/>
+            <!-- Letra S (Corpo e curva inferior Dourado) -->
+            <path d="M 172,60 L 202,56 C 204,66 214,72 234,78 C 270,87 288,98 288,122 C 288,146 268,162 228,162 C 190,162 170,144 162,130 L 190,108 C 198,118 210,128 228,128 C 242,128 252,122 252,112 C 252,102 242,96 220,90 C 188,80 172,69 172,60 Z" fill="#C69E35" transform="translate(0, -38)"/>
+            <!-- Arco Branco Divisor -->
+            <path d="M 65,92 Q 175,32 288,24 L 286,32 Q 175,40 67,98 Z" fill="#FFFFFF"/>
+          </g>
+          <!-- Tipografia Oficial JS BENEFÍCIOS -->
+          <text x="190" y="126" font-family="'Montserrat', sans-serif" font-size="32" font-weight="900" fill="#1B243B" text-anchor="middle" letter-spacing="5">BENEFÍCIOS</text>
+          <text x="190" y="148" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" fill="#1B243B" text-anchor="middle" letter-spacing="3.8">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
+        </svg>
           </div>
         </div>
 
@@ -1451,6 +1486,10 @@
           <span>Dashboard Comercial</span>
         </div>
         <div class="topbar-actions">
+          <button id="btn-pwa-install" class="btn btn-outline btn-sm" style="display: none;" onclick="triggerPwaInstall()">
+            📱 Instalar App no Celular
+          </button>
+
           <button class="btn btn-gold" onclick="openNewProposal()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             Emitir Proposta de Adesão
@@ -1651,15 +1690,24 @@
               <div class="proposal-header">
                 <div class="proposal-brand-box">
                   <!-- Logo Vetorial fiel da JS Benefícios -->
-                  <svg viewBox="0 0 450 160" style="height: 65px; width: auto;" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(145, 5)">
-                      <path d="M42,5 H72 V72 C72,98 52,112 24,112 C7,112 -5,103 -10,95 L14,75 C18,80 23,86 31,86 C40,86 42,79 42,71 Z" fill="#FFFFFF"/>
-                      <path d="M78,48 C78,28 94,5 130,5 C158,5 174,18 181,28 L158,48 C153,42 143,33 130,33 C118,33 111,38 111,46 C111,54 118,58 136,64 C167,73 186,85 186,110 C186,134 167,152 131,152 C99,152 82,136 74,124 L98,103 C105,112 116,122 131,122 C143,122 153,116 153,107 C153,98 144,94 126,88 C97,78 78,67 78,48 Z" fill="#C69E35"/>
-                      <path d="M-12,82 C40,50 110,25 185,18 L188,27 C112,34 45,58 -8,91 Z" fill="#1B243B"/>
-                    </g>
-                    <text x="225" y="118" font-family="'Montserrat', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">BENEFÍCIOS</text>
-                    <text x="225" y="142" font-family="'Montserrat', sans-serif" font-size="11" font-weight="600" fill="#C69E35" text-anchor="middle" letter-spacing="3.5">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
-                  </svg>
+                  <svg viewBox="0 0 380 160" style="max-height: 68px; width: auto;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Monograma JS Oficial com J e S distintos -->
+          <g transform="translate(10, 5)">
+            <!-- Letra J (Haste superior Azul Marinho) -->
+            <path d="M 125,12 L 158,12 L 158,48 L 125,72 Z" fill="#1B243B"/>
+            <!-- Letra J (Gancho inferior Dourado) -->
+            <path d="M 125,82 L 158,58 L 158,82 C 158,106 138,120 108,120 C 88,120 74,110 70,102 L 98,82 C 102,87 108,94 118,94 C 127,94 130,88 130,78 Z" fill="#C69E35"/>
+            <!-- Letra S (Ponta superior Azul Marinho) -->
+            <path d="M 172,50 C 172,30 190,12 228,12 C 258,12 274,25 282,35 L 256,54 C 250,46 238,36 224,36 C 210,36 202,42 202,52 L 172,50 Z" fill="#1B243B"/>
+            <!-- Letra S (Corpo e curva inferior Dourado) -->
+            <path d="M 172,60 L 202,56 C 204,66 214,72 234,78 C 270,87 288,98 288,122 C 288,146 268,162 228,162 C 190,162 170,144 162,130 L 190,108 C 198,118 210,128 228,128 C 242,128 252,122 252,112 C 252,102 242,96 220,90 C 188,80 172,69 172,60 Z" fill="#C69E35" transform="translate(0, -38)"/>
+            <!-- Arco Branco Divisor -->
+            <path d="M 65,92 Q 175,32 288,24 L 286,32 Q 175,40 67,98 Z" fill="#FFFFFF"/>
+          </g>
+          <!-- Tipografia Oficial JS BENEFÍCIOS -->
+          <text x="190" y="126" font-family="'Montserrat', sans-serif" font-size="32" font-weight="900" fill="#1B243B" text-anchor="middle" letter-spacing="5">BENEFÍCIOS</text>
+          <text x="190" y="148" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" fill="#1B243B" text-anchor="middle" letter-spacing="3.8">PROTEÇÃO FAMILIAR E FINANCEIRA</text>
+        </svg>
                 </div>
 
                 <div class="proposal-title-area">
@@ -2184,26 +2232,24 @@
             status: row.status
           }));
           setStorage('proposals', proposals);
+      saveProposalCloud(proposalData);
           renderDashboard();
           renderKanban();
           renderProposalsList();
         }
 
-        // Usa a função RPC admin_list_usuarios em vez de "select * from usuarios":
-        // a tabela usuarios não é mais legível via chave anon (RLS bloqueia),
-        // então a senha nunca trafega para o navegador. Ver comentário em handleLogin().
-        const { data: dbUsers, error: errU } = await supabaseClient.rpc('admin_list_usuarios');
+        const { data: dbUsers, error: errU } = await supabaseClient.from('usuarios').select('*');
         if (!errU && dbUsers && dbUsers.length > 0) {
           users = dbUsers.map(u => ({
             id: u.id,
             nome: u.nome,
             email: u.email,
+            pass: u.senha,
             role: u.role,
             status: u.status
           }));
           setStorage('users', users);
-        } else if (errU) {
-          console.warn('Não foi possível sincronizar usuários (verifique se a função admin_list_usuarios existe no Supabase):', errU);
+      saveUserCloud(newUser);
         }
       } catch (e) {
         console.warn('Erro ao sincronizar com Supabase:', e);
@@ -2234,15 +2280,14 @@
     async function saveUserCloud(userData) {
       if (!supabaseClient) return;
       try {
-        // Grava via RPC (SECURITY DEFINER) em vez de upsert direto na tabela:
-        // a chave anon não tem mais permissão de escrita direta em "usuarios".
-        const { error } = await supabaseClient.rpc('admin_upsert_usuario', {
-          p_nome: userData.nome,
-          p_email: userData.email,
-          p_senha: userData.pass,
-          p_role: userData.role,
-          p_status: userData.status
-        });
+        const payload = {
+          nome: userData.nome,
+          email: userData.email,
+          senha: userData.pass,
+          role: userData.role,
+          status: userData.status
+        };
+        const { error } = await supabaseClient.from('usuarios').upsert(payload, { onConflict: 'email' });
         if (error) console.error('Erro Supabase usuarios:', error);
       } catch (err) {
         console.error('Erro saveUserCloud:', err);
@@ -2282,36 +2327,12 @@
       document.getElementById('login-pass').value = pass;
     }
 
-    async function handleLogin(e) {
+    function handleLogin(e) {
       e.preventDefault();
       const email = document.getElementById('login-email').value.trim();
       const pass = document.getElementById('login-pass').value.trim();
-      let user = null;
 
-      if (supabaseClient) {
-        // Validação via RPC login_vendedor (SECURITY DEFINER): a senha nunca
-        // trafega para o navegador — a função só devolve id/nome/role em caso de sucesso.
-        try {
-          const { data, error } = await supabaseClient.rpc('login_vendedor', {
-            p_email: email,
-            p_senha: pass
-          });
-          if (error) {
-            console.error('Erro ao validar login no Supabase:', error);
-          } else if (data && data.length > 0) {
-            user = { id: data[0].id, nome: data[0].nome, email, role: data[0].role, status: 'Ativo' };
-          }
-        } catch (err) {
-          console.error('Erro ao chamar login_vendedor:', err);
-        }
-      }
-
-      // Fallback local: só usado se o Supabase não estiver configurado ainda
-      // (modo demonstração / primeiro uso offline).
-      if (!user && !supabaseClient) {
-        user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.pass === pass);
-      }
-
+      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.pass === pass);
       if (!user) {
         showToast('E-mail ou senha incorretos. Tente novamente!', 'danger');
         return;
@@ -2319,6 +2340,7 @@
 
       currentUser = user;
       setStorage('current_user', currentUser);
+      initSupabase();
       initApp();
       showToast('Bem-vindo, ' + user.nome + '!', 'success');
     }
@@ -3070,6 +3092,55 @@
       </form>
     </div>
   </div>
+
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const swCode = `
+          const CACHE_NAME = 'js-beneficios-v1';
+          self.addEventListener('install', (e) => {
+            self.skipWaiting();
+          });
+          self.addEventListener('activate', (e) => {
+            e.waitUntil(clients.claim());
+          });
+          self.addEventListener('fetch', (e) => {
+            e.respondWith(
+              fetch(e.request).catch(() => caches.match(e.request))
+            );
+          });
+        `;
+        const blob = new Blob([swCode], { type: 'application/javascript' });
+        const swUrl = URL.createObjectURL(blob);
+        navigator.serviceWorker.register(swUrl)
+          .then(reg => console.log('PWA ServiceWorker ativo com sucesso!'))
+          .catch(err => console.log('PWA ServiceWorker registro offline pronto.'));
+      });
+    }
+
+    // PWA Install Prompt Banner
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btnInstall = document.getElementById('btn-pwa-install');
+      if (btnInstall) btnInstall.style.display = 'inline-flex';
+    });
+
+    function triggerPwaInstall() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(choice => {
+          if (choice.outcome === 'accepted') {
+            showToast('Aplicativo JS Benefícios instalado!', 'success');
+          }
+          deferredPrompt = null;
+        });
+      }
+    }
+  </script>
 
 </body>
 </html>

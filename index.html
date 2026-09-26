@@ -2184,24 +2184,26 @@
             status: row.status
           }));
           setStorage('proposals', proposals);
-      saveProposalCloud(proposalData);
           renderDashboard();
           renderKanban();
           renderProposalsList();
         }
 
-        const { data: dbUsers, error: errU } = await supabaseClient.from('usuarios').select('*');
+        // Usa a função RPC admin_list_usuarios em vez de "select * from usuarios":
+        // a tabela usuarios não é mais legível via chave anon (RLS bloqueia),
+        // então a senha nunca trafega para o navegador. Ver comentário em handleLogin().
+        const { data: dbUsers, error: errU } = await supabaseClient.rpc('admin_list_usuarios');
         if (!errU && dbUsers && dbUsers.length > 0) {
           users = dbUsers.map(u => ({
             id: u.id,
             nome: u.nome,
             email: u.email,
-            pass: u.senha,
             role: u.role,
             status: u.status
           }));
           setStorage('users', users);
-      saveUserCloud(newUser);
+        } else if (errU) {
+          console.warn('Não foi possível sincronizar usuários (verifique se a função admin_list_usuarios existe no Supabase):', errU);
         }
       } catch (e) {
         console.warn('Erro ao sincronizar com Supabase:', e);
@@ -2232,14 +2234,15 @@
     async function saveUserCloud(userData) {
       if (!supabaseClient) return;
       try {
-        const payload = {
-          nome: userData.nome,
-          email: userData.email,
-          senha: userData.pass,
-          role: userData.role,
-          status: userData.status
-        };
-        const { error } = await supabaseClient.from('usuarios').upsert(payload, { onConflict: 'email' });
+        // Grava via RPC (SECURITY DEFINER) em vez de upsert direto na tabela:
+        // a chave anon não tem mais permissão de escrita direta em "usuarios".
+        const { error } = await supabaseClient.rpc('admin_upsert_usuario', {
+          p_nome: userData.nome,
+          p_email: userData.email,
+          p_senha: userData.pass,
+          p_role: userData.role,
+          p_status: userData.status
+        });
         if (error) console.error('Erro Supabase usuarios:', error);
       } catch (err) {
         console.error('Erro saveUserCloud:', err);
@@ -2279,12 +2282,36 @@
       document.getElementById('login-pass').value = pass;
     }
 
-    function handleLogin(e) {
+    async function handleLogin(e) {
       e.preventDefault();
       const email = document.getElementById('login-email').value.trim();
       const pass = document.getElementById('login-pass').value.trim();
+      let user = null;
 
-      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.pass === pass);
+      if (supabaseClient) {
+        // Validação via RPC login_vendedor (SECURITY DEFINER): a senha nunca
+        // trafega para o navegador — a função só devolve id/nome/role em caso de sucesso.
+        try {
+          const { data, error } = await supabaseClient.rpc('login_vendedor', {
+            p_email: email,
+            p_senha: pass
+          });
+          if (error) {
+            console.error('Erro ao validar login no Supabase:', error);
+          } else if (data && data.length > 0) {
+            user = { id: data[0].id, nome: data[0].nome, email, role: data[0].role, status: 'Ativo' };
+          }
+        } catch (err) {
+          console.error('Erro ao chamar login_vendedor:', err);
+        }
+      }
+
+      // Fallback local: só usado se o Supabase não estiver configurado ainda
+      // (modo demonstração / primeiro uso offline).
+      if (!user && !supabaseClient) {
+        user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.pass === pass);
+      }
+
       if (!user) {
         showToast('E-mail ou senha incorretos. Tente novamente!', 'danger');
         return;
@@ -2292,7 +2319,6 @@
 
       currentUser = user;
       setStorage('current_user', currentUser);
-      initSupabase();
       initApp();
       showToast('Bem-vindo, ' + user.nome + '!', 'success');
     }
